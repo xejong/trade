@@ -1,0 +1,37 @@
+body{
+    background-color: #F6F7D7;
+}
+
+.coinLabel{
+    color:#FF165D;
+    font-size: 50px;
+}
+
+.dateLabel{
+    color:black;
+    font-size: 30px;
+}
+.cashLabel{
+    color:#FF9A00;
+    font-size: 40px;
+}
+.myCoinLabel{
+    color:#FF9A00;
+    font-size: 40px;
+}
+.buyBtn{
+    font-size: 50px;
+}
+.sellBtn{
+    font-size: 50px;
+}
+
+Input{
+    font-size: 30px;
+    width:200px;
+    height: 60px;
+}
+.noticeLabel{
+    color:black;
+    font-size: 20px;
+}

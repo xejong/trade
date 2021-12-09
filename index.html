@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>chart trading simulation</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div id="chartContainer" style="height: 200px; width:30%;"></div>
+    <label class="coinLabel"></label><br>
+    <label class="dateLabel"></label><br>
+    <label class="cashLabel"></label><br>
+    <label class="myCoinLabel"></label><br>
+    <input type="text" placeholder="cash" class="cashInput">
+    <button class="buyBtn">buy</button><br>
+    <button class="buy100Btn">+100$</button>
+    <button class="buy1000Btn">+1000$</button>
+    <button class="buy10000Btn">+10000$</button>
+    <button class="buyAllBtn">all in</button>
+    <button class="buyCleanBtn">clean</button>
+    <br><br>
+    <input type="text" placeholder="coin" class="coinInput">
+    <button class="sellBtn">sell</button><br>
+    <button class="sell10Btn">+10coins</button>
+    <button class="sell50Btn">+50coins</button>
+    <button class="sell100Btn">+100coins</button>
+    <button class="sellAllBtn">all in</button>
+    <button class="sellCleanBtn">clean</button><br>
+    <label class="noticeLabel"></label>
+    <script src="lineChart.js"></script>
+    <script src="coin.js"></script>
+    <script src="trade.js"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+
+</html>
