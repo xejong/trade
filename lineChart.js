@@ -3,7 +3,7 @@ window.onload = function () {
 	let dps = []; // dataPoints
 	let chart = new CanvasJS.Chart("chartContainer", {
 		title: {
-			text: "CHART TRADING SIMULATION"
+			text: "CHART TRADING SIMULATOR"
 		},
 		data: [{
 			type: "line",
