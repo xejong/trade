@@ -8,27 +8,31 @@
 </head>
 
 <body>
-    <div id="chartContainer" style="height: 200px; width:30%;"></div>
+    <div id="chartContainer" style="height: 200px; width:40%;"></div>
     <label class="coinLabel"></label><br>
     <label class="dateLabel"></label><br>
     <label class="cashLabel"></label><br>
     <label class="myCoinLabel"></label><br>
+    <label class="statLabel"></label><br>
     <input type="text" placeholder="cash" class="cashInput">
-    <button class="buyBtn">buy</button><br>
-    <button class="buy100Btn">+100$</button>
-    <button class="buy1000Btn">+1000$</button>
-    <button class="buy10000Btn">+10000$</button>
-    <button class="buyAllBtn">all in</button>
-    <button class="buyCleanBtn">clean</button>
+    <button class="buyBtn bigBtn">buy</button><br>
+    <button class="buy100Btn smlBtn">+100$</button>
+    <button class="buy1000Btn smlBtn">+1000$</button>
+    <button class="buy10000Btn smlBtn">+10000$</button>
+    <button class="buyAllBtn smlBtn">all in</button>
+    <button class="buyCleanBtn smlBtn">clean</button>
     <br><br>
     <input type="text" placeholder="coin" class="coinInput">
-    <button class="sellBtn">sell</button><br>
-    <button class="sell10Btn">+10coins</button>
-    <button class="sell50Btn">+50coins</button>
-    <button class="sell100Btn">+100coins</button>
-    <button class="sellAllBtn">all in</button>
-    <button class="sellCleanBtn">clean</button><br>
+    <button class="sellBtn bigBtn">sell</button><br>
+    <button class="sell10Btn smlBtn">+10coins</button>
+    <button class="sell50Btn smlBtn">+50coins</button>
+    <button class="sell100Btn smlBtn">+100coins</button>
+    <button class="sellAllBtn smlBtn">all in</button>
+    <button class="sellCleanBtn smlBtn">clean</button>
+    <div class="noticeDiv">
     <label class="noticeLabel"></label>
+    </div>
+    <button class="cleanNoticeBtn smlBtn">clean</button>
     <script src="lineChart.js"></script>
     <script src="coin.js"></script>
     <script src="trade.js"></script>

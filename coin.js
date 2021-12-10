@@ -1,5 +1,6 @@
-const coinLabel = document.querySelector('label.coinLabel');
-const dateLabel = document.querySelector('label.dateLabel');
+const coinLabel = document.querySelector('label.coinLabel'),
+    dateLabel = document.querySelector('label.dateLabel'),
+    statLabel = document.querySelector('label.statLabel');
 
 let coin = 100;
 let date = 1;
@@ -32,6 +33,8 @@ function whatsNext() {
             changeUpDown = '▼';
         }
         coinLabel.innerText = `Price: ${coin}$ ${changeUpDown}${changeRate}%`;
+
+        myStatus();
     }
 
     setInterval(upDown, 30);
@@ -41,6 +44,12 @@ function whatsNext() {
 function cheakDate() {
     dateLabel.innerText = `[Day ${date}] 전날 최고종가 ${priceLastDay}$`;
 }
+
+function myStatus(){
+    statLabel.innerHTML=`평가금액 ${(myCoin*coin).toFixed(1)}$`;
+}
+
+
 
 whatsNext();
 cheakDate();

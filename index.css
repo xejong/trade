@@ -19,17 +19,31 @@ body{
     color:#FF9A00;
     font-size: 40px;
 }
-.buyBtn{
-    font-size: 50px;
+.statLabel{
+    color:#FF9A00;
+    font-size: 20px;
 }
-.sellBtn{
-    font-size: 50px;
+.bigBtn{
+    font-size: 40px;
+    border: 1px black outset;
+    background-color: white;
 }
-
+.smlBtn{
+    font-size: 14px;
+    border: 1px black outset;
+    background-color: white;
+}
+.noticeDiv{
+    margin-top: 10px;
+    width: 40%;
+    height: 200px;
+    background-color: white;
+    overflow: auto;
+}
 Input{
     font-size: 30px;
     width:200px;
-    height: 60px;
+    height: 50px;
 }
 .noticeLabel{
     color:black;

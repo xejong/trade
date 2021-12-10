@@ -4,7 +4,8 @@ const cashLabel = document.querySelector('label.cashLabel'),
     cashInput = document.querySelector('input.cashInput'),
     coinInput = document.querySelector('input.coinInput'),
     buyBtn = document.querySelector('button.buyBtn'),
-    sellBtn = document.querySelector('button.sellBtn');
+    sellBtn = document.querySelector('button.sellBtn'),
+    noticeDiv = document.querySelector('div.noticeDiv');
 
 const buy100Btn = document.querySelector('button.buy100Btn'),
     buy1000Btn = document.querySelector('button.buy1000Btn'),
@@ -15,7 +16,8 @@ const buy100Btn = document.querySelector('button.buy100Btn'),
     sell50Btn = document.querySelector('button.sell50Btn'),
     sell100Btn = document.querySelector('button.sell100Btn'),
     sellAllBtn = document.querySelector('button.sellAllBtn'),
-    sellCleanBtn = document.querySelector('button.sellCleanBtn');
+    sellCleanBtn = document.querySelector('button.sellCleanBtn'),
+    cleanNoticeBtn = document.querySelector('button.cleanNoticeBtn');
 
 let cash = 10000;
 let myCoin = 0;
@@ -28,28 +30,44 @@ function watchMyCoins() {
 }
 
 function buyCoins() {
-    if (cash >= cashInput.value) {
+    if (cashInput.value=="") {
+        noticeLabel.innerHTML+="매수 금액을 입력해주세요.<br>"
+        noticeDiv.scrollTop=noticeDiv.scrollHeight;
+    } else if(cash<cashInput.value) {
+        noticeLabel.innerHTML+="소지금액 부족으로 매수가 불가능합니다.<br>"
+        noticeDiv.scrollTop=noticeDiv.scrollHeight;
+    }else if(cash >= cashInput.value){
         cash = cash - cashInput.value;
         myCoin += cashInput.value / coin;
         noticeLabel.innerHTML+=`${Number(cashInput.value).toFixed(1)}$로 ${myCoin.toFixed(3)}개의 코인을 매수 완료하였습니다.<br>`
+        noticeDiv.scrollTop=noticeDiv.scrollHeight;
         cashInput.value = "";
         watchCash();
         watchMyCoins();
-    } else {
-        noticeLabel.innerHTML+="소지금액 부족으로 매수가 불가능합니다.<br>"
+    }else{
+        noticeLabel.innerHTML+="숫자만 입력해주세요.<br>"
+        noticeDiv.scrollTop=noticeDiv.scrollHeight;
     }
 }
 
 function sellCoins() {
-    if (myCoin >= coinInput.value) {
+    if (coinInput.value=="") {
+        noticeLabel.innerHTML+="매도할 코인 개수를 입력해주세요.<br>"
+        noticeDiv.scrollTop=noticeDiv.scrollHeight;
+    } else if(myCoin < coinInput.value) {
+        noticeLabel.innerHTML+="소지한 코인 개수 부족으로 매도가 불가능합니다.<br>"
+        noticeDiv.scrollTop=noticeDiv.scrollHeight;
+    }else if(myCoin >= coinInput.value){
         myCoin = myCoin - coinInput.value;
         cash += coinInput.value * coin;
         noticeLabel.innerHTML+=`코인 ${Number(coinInput.value).toFixed(3)}개 ${cash.toFixed(1)}$에 매도 완료하였습니다.<br>`
+        noticeDiv.scrollTop=noticeDiv.scrollHeight;
         coinInput.value = "";
         watchCash();
         watchMyCoins();
-    } else {
-        noticeLabel.innerHTML+="소지한 코인 개수 부족으로 매도가 불가능합니다.<br>"
+    }else{
+        noticeLabel.innerHTML+="숫자만 입력해주세요.<br>"
+        noticeDiv.scrollTop=noticeDiv.scrollHeight;
     }
 }
 
@@ -76,13 +94,17 @@ function sell50() {
     coinInput.value = Number(coinInput.value) + 50;
 }
 function sell100() {
-    coinInput.value = Number(coinInput.value) + 10;
+    coinInput.value = Number(coinInput.value) + 100;
 }
 function sellAll() {
     coinInput.value = myCoin;
 }
 function sellClean() {
     coinInput.value = "";
+}
+
+function cleanNotice() {
+    noticeLabel.innerHTML="";
 }
 
 buyBtn.addEventListener('click', buyCoins);
@@ -99,6 +121,8 @@ sell50Btn.addEventListener('click', sell50);
 sell100Btn.addEventListener('click', sell100);
 sellAllBtn.addEventListener('click', sellAll);
 sellCleanBtn.addEventListener('click', sellClean);
+
+cleanNoticeBtn.addEventListener('click',cleanNotice)
 
 watchCash();
 watchMyCoins();
