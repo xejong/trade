@@ -42,8 +42,8 @@ function whatsNext() {
 }
 
 function cheakDate() {
-    dateLabel.innerText = `[Day ${date}] 전날 최고종가 ${priceLastDay}$`;
-    noticeLabel.innerHTML+=`날짜가 경과되었습니다. 전날 최고종가 ${priceLastDay}$`
+    dateLabel.innerText = `[Day ${date}] 전날 종가 ${priceLastDay}$`;
+    noticeLabel.innerHTML+=`날짜가 경과되었습니다. 전날 종가 ${priceLastDay}$`
     noticeDiv.scrollTop=noticeDiv.scrollHeight;
 }
 
