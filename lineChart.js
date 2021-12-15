@@ -3,7 +3,7 @@ window.onload = function () {
 	let dps = []; // dataPoints
 	let chart = new CanvasJS.Chart("chartContainer", {
 		title: {
-			text: "CHART TRADING SIMULATOR"
+			text: "CHART TRADING SIMULATION"
 		},
 		data: [{
 			type: "line",
@@ -29,7 +29,7 @@ window.onload = function () {
 			});
 			xVal++;
 
-			if (xVal % 1000 == 0) {
+			if (xVal % 1000 == 0&&coin!=0) {
 				date++;
 				priceLastDay = coin;
 				cheakDate();
@@ -44,6 +44,6 @@ window.onload = function () {
 	};
 
 	updateChart(dataLength);
-	setInterval(function () { updateChart() }, updateInterval);
+	let chartInterval=setInterval(function () { updateChart() }, updateInterval);
 
 }

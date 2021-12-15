@@ -19,6 +19,16 @@ function whatsNext() {
         } else if (random > 5) {
             coin--;
         }
+
+        if(coin==0){
+            myCoin=0;
+            clearInterval(upDownInterval);
+            clearInterval(chartInterval);
+            noticeLabel.innerHTML+=`코인이 상장폐지되었습니다. 보유중이신 코인이 전량 소멸되었습니다.<br>`;
+            noticeDiv.scrollTop=noticeDiv.scrollHeight;
+            watchCoins();
+            clearInterval(watchCoinsInterval);
+        }
     }
     function watchCoins() {
         if (coin > priceLastDay) {
@@ -37,13 +47,13 @@ function whatsNext() {
         myStatus();
     }
 
-    setInterval(upDown, 30);
-    setInterval(watchCoins, 500);
+    let upDownInterval=setInterval(upDown, 30);
+    let watchCoinsInterval=setInterval(watchCoins, 500);
 }
 
 function cheakDate() {
     dateLabel.innerText = `[Day ${date}] 전날 종가 ${priceLastDay}$`;
-    noticeLabel.innerHTML+=`날짜가 경과되었습니다. 전날 종가 ${priceLastDay}$`
+    noticeLabel.innerHTML+=`날짜가 경과되었습니다. 전날 종가 ${priceLastDay}$<br>`
     noticeDiv.scrollTop=noticeDiv.scrollHeight;
 }
 
